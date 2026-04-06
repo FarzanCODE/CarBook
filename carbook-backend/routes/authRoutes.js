@@ -23,7 +23,7 @@ router.post("/logout", logoutUser);
 
 router.get("/me", protect, getMe);
 router.put("/update-profile", protect, updateProfile);
-router.put("change-password", protect, changePassword);
+router.put("/change-password", protect, changePassword);
 
 router.get(
   "/google",
@@ -39,7 +39,9 @@ router.get(
   (req, res) => {
     const token = generateToken(req.user._id, req.user.role);
     sendTokenCookie(res, token);
-    res.redirect(`${process.env.FRONTEND_URL}/auth/google/success?token=${token}`);
+    res.redirect(
+      `${process.env.FRONTEND_URL}/auth/google/success?token=${token}`,
+    );
   },
 );
 
