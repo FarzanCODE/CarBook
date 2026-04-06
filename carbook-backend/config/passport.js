@@ -29,6 +29,7 @@ passport.use(
           user.googleId = profile.id;
           user.isGoogleUser = true;
           user.avatar = avatarUrl;
+          user.name = profile.displayName; 
           await user.save();
           return done(null, user);
         }
