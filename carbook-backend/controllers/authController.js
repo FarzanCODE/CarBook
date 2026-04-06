@@ -89,6 +89,7 @@ const registerUser = async (req, res) => {
         role: user.role,
         avatar: user.avatar,
       },
+      token,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -134,6 +135,7 @@ const loginUser = async (req, res) => {
         role: user.role,
         avatar: user.avatar,
       },
+      token,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });

@@ -39,7 +39,7 @@ router.get(
   (req, res) => {
     const token = generateToken(req.user._id, req.user.role);
     sendTokenCookie(res, token);
-    res.redirect(`${process.env.FRONTEND_URL}/auth/google/success`);
+    res.redirect(`${process.env.FRONTEND_URL}/auth/google/success?token=${token}`);
   },
 );
 

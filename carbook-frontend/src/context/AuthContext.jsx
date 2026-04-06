@@ -22,8 +22,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const login = (userData) => {
+  const login = (userData, token) => {
     setUser(userData);
+    if (token) {
+      localStorage.setItem("token", token);
+    }
   };
 
   const logout = async () => {
@@ -32,6 +35,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
+    localStorage.removeItem("token");
     setUser(null);
   };
 

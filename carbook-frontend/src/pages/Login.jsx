@@ -41,7 +41,7 @@ const Login = () => {
 
     try {
       const { data } = await axiosInstance.post("/auth/login", formData);
-      login(data.user);
+      login(data.user, data.token);
       toast.success(`Welcome back, ${data.user.name}! 🚗`);
       navigate("/");
     } catch (error) {

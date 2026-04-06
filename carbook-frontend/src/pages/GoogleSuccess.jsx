@@ -18,8 +18,14 @@ const GoogleSuccess = () => {
 
   const handleGoogleSuccess = async () => {
     try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get("token");
+      if (token) {
+        localStorage.setItem("token", token);
+      }
+
       const { data } = await axiosInstance.get("/auth/me");
-      login(data.user);
+      login(data.user, token);
       toast.success(`Welcome, ${data.user.name}! 🎉`);
       navigate("/");
     } catch (error) {
