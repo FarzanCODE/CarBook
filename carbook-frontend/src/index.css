@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-background text-textMain font-sans;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0e0f1a];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-sm;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+@layer utilities {
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white border-0;
+  }
+}

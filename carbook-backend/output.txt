@@ -1,0 +1,5 @@
+Connected to DB
+Token generated for admin: farzan@test.com
+Sending POST Request to http://localhost:5000/api/cars/...
+HTTP Status: 500
+Server Response: { message: 'Upload preset must be whitelisted for unsigned uploads' }
