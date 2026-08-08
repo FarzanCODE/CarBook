@@ -202,7 +202,9 @@ const Cars = () => {
                   placeholder="Enter city..."
                   value={locationInput}
                   onChange={(e) => setLocationInput(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && updateFilter("location", locationInput)}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && updateFilter("location", locationInput)
+                  }
                   className="w-full bg-card text-white pl-3 pr-10 py-2 rounded-lg border border-gray-700 focus:border-primary text-sm"
                 />
                 <button

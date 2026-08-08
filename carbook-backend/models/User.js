@@ -29,23 +29,23 @@ const userSchema = new mongoose.Schema(
 
     avatar: {
       type: String,
-      deafult: "",
+      default: "",
     },
 
     role: {
       type: String,
       enum: ["user", "admin"],
-      deafult: "user",
+      default: "user",
     },
 
     googleId: {
       type: String,
-      deafault: null,
+      default: null,
     },
 
     isGoogleUser: {
       type: Boolean,
-      deafult: false,
+      default: false,
     },
 
     isEmailVerified: {
